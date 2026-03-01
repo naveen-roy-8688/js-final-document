@@ -419,6 +419,169 @@ Most asked:
 * `slice()` vs `splice()`
 
 ---
+Interview Definition
+
+map() creates a new array by applying a transformation function to every element of the original array without modifying it.
+
+Example
+const nums = [1,2,3];
+
+const doubled = nums.map(n => n * 2);
+console.log(doubled); // [2,4,6]
+Real Use Case
+
+Formatting API data
+
+UI rendering lists (React)
+
+Interview Key Point
+
+✅ Returns new array
+✅ Same length as original
+✅ Immutable operation
+
+✅ 2. filter() — Conditional Selection
+Interview Definition
+
+filter() returns a new array containing only the elements that satisfy a given condition.
+
+Example
+const nums = [1,2,3,4];
+
+const even = nums.filter(n => n % 2 === 0);
+console.log(even); // [2,4]
+Real Use Case
+
+Search results
+
+Removing inactive users
+
+Interview Key Point
+
+✅ Removes elements based on condition
+✅ Does not mutate original array
+
+✅ 3. reduce() — Accumulate Values
+Interview Definition
+
+reduce() executes a reducer function on each element and accumulates the result into a single output value.
+
+Syntax
+array.reduce((accumulator, current) => {}, initialValue)
+Example (Sum)
+const nums = [1,2,3,4];
+
+const sum = nums.reduce((acc, curr) => acc + curr, 0);
+console.log(sum); // 10
+Real Use Cases
+
+totals
+
+grouping data
+
+object creation
+
+Interview Key Point
+
+✅ Converts array → single value (number/object/array)
+
+✅ 4. find() — First Matching Element
+Interview Definition
+
+find() returns the first element that satisfies a condition, otherwise returns undefined.
+
+Example
+const users = [
+  {id:1},
+  {id:2}
+];
+
+const user = users.find(u => u.id === 2);
+console.log(user); // {id:2}
+Interview Key Point
+
+✅ Stops searching after first match
+✅ Returns element (not array)
+
+✅ 5. some() — At Least One Match
+Interview Definition
+
+some() checks whether at least one element satisfies a condition and returns a boolean.
+
+Example
+const nums = [1,3,5,8];
+
+nums.some(n => n % 2 === 0); // true
+Use Case
+
+Validation checks.
+
+✅ 6. every() — All Must Match
+Interview Definition
+
+every() checks whether all elements satisfy a condition.
+
+Example
+const nums = [2,4,6];
+
+nums.every(n => n % 2 === 0); // true
+Interview Key Point
+
+Stops early if condition fails.
+
+✅ 7. forEach() — Iteration Only
+Interview Definition
+
+forEach() executes a function for each array element but does not return a new array.
+
+Example
+const nums = [1,2,3];
+
+nums.forEach(n => console.log(n));
+Important Difference
+
+❌ Cannot chain
+❌ No return value
+
+Interview Tip
+
+Use forEach for side effects like logging or DOM updates.
+
+✅ 8. slice() vs splice() (VERY COMMON QUESTION)
+🔹 slice() — Non-Mutating Copy
+Interview Definition
+
+slice() returns a shallow copy of a portion of an array without modifying the original array.
+
+const arr = [1,2,3,4];
+
+arr.slice(1,3); // [2,3]
+
+✅ Original array unchanged.
+
+🔹 splice() — Mutating Method
+Interview Definition
+
+splice() adds, removes, or replaces elements by modifying the original array.
+
+const arr = [1,2,3,4];
+
+arr.splice(1,2);
+console.log(arr); // [1,4]
+
+✅ Changes original array.
+
+⭐ Quick Comparison Table (Interview Favorite)
+Method	Returns	Mutates Array	Purpose
+map	new array	❌	transform
+filter	new array	❌	condition
+reduce	single value	❌	accumulate
+find	element	❌	first match
+some	boolean	❌	any match
+every	boolean	❌	all match
+forEach	undefined	❌	iteration
+slice	new array	❌	copy part
+splice	modified array	✅	add/remove
 
 ## 1️⃣6️⃣ Recursion
 
